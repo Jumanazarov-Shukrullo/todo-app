@@ -78,5 +78,22 @@ To set up and run the Project Name project, follow these instructions:
 
 1. **Clone the repository from GitHub:**
    ```sh
-   git clone https://github.com/your-username/project-name.git
+   https://github.com/Jumanazarov-Shukrullo/todo-app.git
+2. **Build the Docker image using the provided Dockerfile:**
+    
+   ```sh
+    docker build -t project-name .
+    ```
 
+3. **Run a Docker container based on the built image:**
+
+    ```sh
+    docker run -it --rm -p 8000:8000 project-name
+    ```
+
+4. **Apply migrations to create the database schema:**
+   ```sh
+   docker exec -it <container_id> python manage.py migrate
+5. **Optionally, create a superuser for accessing the Django admin interface:**
+   ```sh 
+   docker exec -it <container_id> python manage.py createsuperuser
